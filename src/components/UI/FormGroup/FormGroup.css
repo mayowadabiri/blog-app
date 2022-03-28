@@ -1,0 +1,37 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-group:not(:last-child) {
+    margin-bottom: 20px
+}
+
+
+.form-label {
+    font-family: 'Mulish';
+    font-style: normal;
+    /* font-weight: 600; */
+    font-size: 15px;
+    line-height: 28px;
+    color: #787676;
+    margin-bottom: 8px
+}
+
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background: #FFFFFF;
+    /* Grey/Grey 7 */
+
+    border: 1px solid #E5E9F2;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.form-input:focus {
+    outline: none;
+}

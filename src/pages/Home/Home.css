@@ -1,0 +1,6 @@
+.home {
+    height: calc(100vh - 70px);
+    background-image: url('../../assets/image.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
