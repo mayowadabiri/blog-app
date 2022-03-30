@@ -1,11 +1,11 @@
 import FormGroup from '../../components/UI/FormGroup/FormGroup';
 import AuthLayout from '../../layout/Auth/Auth';
 
-const Login = () => {
+const ForgotPassword = () => {
   return (
     <AuthLayout
-      title="Login to your account"
-      info="Enter your email address and password to continue."
+      title="Forgot your password?"
+      info="Enter your email address to continue."
     >
       <form>
         <FormGroup
@@ -14,13 +14,8 @@ const Login = () => {
           placeholder="Email Address"
           //   value={'mayowad43@gmail.com'}
         />
-        <FormGroup
-          label="Password"
-          type="password"
-          placeholder="Enter your password"
-        />
       </form>
     </AuthLayout>
   );
 };
-export default Login;
+export default ForgotPassword;

@@ -1,7 +1,6 @@
 import './FormGroup.css';
 
 const FormGroup = ({ label, ...props }) => {
-  console.log(label);
   return (
     <div className="form-group">
       <label className="form-label">{label}</label>

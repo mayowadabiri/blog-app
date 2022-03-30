@@ -1,8 +1,13 @@
 import Logo from '../../../assets/logo.png';
 import Navigation from '../Navigation/Navigation';
 import classes from './Header.module.css';
+import { withRouter } from 'react-router-dom';
 
-const Header = () => {
+// Higher order component
+const Header = (props) => {
+  const gotoSignup = () => {
+    props.history.push('/signup');
+  };
   return (
     <header className={classes.header}>
       <div className={classes.header_container}>
@@ -15,4 +20,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);
