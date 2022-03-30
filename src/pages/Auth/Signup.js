@@ -29,7 +29,7 @@ const SignUp = (props) => {
       .post('http://localhost:4002/api/v1/auth/signup', signupForm)
       .then((res) => {
         setLoading(false);
-        props.history.push('/');
+        props.history.push('/login');
       })
       .catch((err) => {
         setLoading(false);
