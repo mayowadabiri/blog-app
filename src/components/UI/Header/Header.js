@@ -2,12 +2,15 @@ import Logo from '../../../assets/logo.png';
 import Navigation from '../Navigation/Navigation';
 import classes from './Header.module.css';
 import { useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-
+import { useEffect, useState, useContext } from 'react';
+import { UserContext } from '../../../App';
 // Higher order component
 const Header = (props) => {
   const location = useLocation();
 
+  const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+
+  // console.log(isLoggedIn);
   const [cssStyle, setCssStyle] = useState([classes.header]);
 
   useEffect(() => {
@@ -23,7 +26,7 @@ const Header = (props) => {
         <div className={classes.header_logo}>
           <img src={Logo} alt="Logo" />
         </div>
-        <Navigation />
+        <Navigation isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       </div>
     </header>
   );

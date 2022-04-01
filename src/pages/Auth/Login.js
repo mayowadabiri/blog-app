@@ -1,10 +1,13 @@
 import FormGroup from '../../components/UI/FormGroup/FormGroup';
 import AuthLayout from '../../layout/Auth/Auth';
 import Button from '../../components/UI/Button/Button';
-import { useState, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
+import { UserContext } from '../../App';
 
 const Login = (props) => {
+  const { setIsLoggedIn } = useContext(UserContext);
+
   const [loginForm, setLoginForm] = useState({
     email: '',
     password: '',
@@ -30,6 +33,7 @@ const Login = (props) => {
       })
       .then((res) => {
         setLoading(false);
+        setIsLoggedIn(true);
         props.history.push('/');
       })
       .catch((err) => {
