@@ -16,7 +16,7 @@ const Login = (props) => {
   const changeHandler = (evt, type) => {
     setLoginForm({
       ...loginForm,
-      [type]: evt.target.value.trim(),
+      [type]: evt.target.value,
     });
   };
   const [errorMsg, setErrorMsg] = useState('');
@@ -28,10 +28,12 @@ const Login = (props) => {
     evt.preventDefault();
     axios
       .post('http://localhost:4002/api/v1/auth/signin', {
-        username: loginForm.email,
+        username: loginForm.email.trim(),
         password: loginForm.password,
       })
       .then((res) => {
+        console.log(res.data.token);
+        localStorage.setItem('token', res.data.token);
         setLoading(false);
         setIsLoggedIn(true);
         props.history.push('/');

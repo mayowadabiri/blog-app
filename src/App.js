@@ -7,11 +7,12 @@ import Login from './pages/Auth/Login';
 import ForgotPassword from './pages/Auth/ForgotPassword';
 
 import { createContext, useState } from 'react';
+import CreateBlog from './pages/CreateBlog/CreateBlog';
 
 export const UserContext = createContext(null);
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <UserContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/signup" exact component={SignUp} />
             <Route path="/login" exact component={Login} />
             <Route path="/forgot-password" exact component={ForgotPassword} />
+            <Route path="/new" exact component={CreateBlog} />
           </Switch>
         </main>
       </div>

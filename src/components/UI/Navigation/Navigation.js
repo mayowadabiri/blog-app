@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 const Navigation = ({ isLoggedIn, setIsLoggedIn }) => {
   const history = useHistory();
 
+  console.log(isLoggedIn);
   const handleLogout = () => {
     setIsLoggedIn(false);
     history.push('/login');
@@ -23,7 +24,9 @@ const Navigation = ({ isLoggedIn, setIsLoggedIn }) => {
         {isLoggedIn && (
           <>
             <li className="nav_li">
-              <Link className="nav_link"> Create Post</Link>
+              <Link to="/new" className="nav_link">
+                Create Post
+              </Link>
             </li>
             <li className="nav_li">
               <button onClick={handleLogout} className="nav_link">

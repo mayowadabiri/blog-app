@@ -4,7 +4,7 @@ import classes from './Header.module.css';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../../App';
-// Higher order component
+
 const Header = (props) => {
   const location = useLocation();
 
