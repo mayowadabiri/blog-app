@@ -4,14 +4,16 @@ import { useState } from 'react';
 import Button from '../../components/UI/Button/Button';
 import axios from 'axios';
 
-const CreateBlog = () => {
+const CreateBlog = (props) => {
   const [image, setImage] = useState(null);
   const [file, setFile] = useState(null);
+
   const [createForm, setCreateForm] = useState({
     title: '',
     content: '',
   });
 
+  const [loading, setLoading] = useState(false);
   const handleImage = (evt) => {
     console.log('jhdsvg');
     const file = evt.target.files[0];
@@ -27,6 +29,7 @@ const CreateBlog = () => {
   };
 
   const handleSubmit = (evt) => {
+    setLoading(true);
     evt.preventDefault();
     const data = new FormData();
     data.append('image', file);
@@ -41,7 +44,9 @@ const CreateBlog = () => {
         },
       })
       .then((res) => {
+        setLoading(false);
         console.log(res);
+        props.history.push('/blog');
       })
       .catch((err) => console.error(err));
   };
@@ -82,7 +87,9 @@ const CreateBlog = () => {
             ></textarea>
           </div>
         </div>
-        <Button type="submit">Create Blog</Button>
+        <Button isLoading={loading} type="submit">
+          Create Blog
+        </Button>
       </form>
     </div>
   );

@@ -1,0 +1,20 @@
+.blog {
+    width: 70%;
+    margin: auto;
+}
+
+.blog_lists {
+    margin-top: 70px
+}
+
+.blog_list {
+    margin-bottom: 70px;
+    display: flex;
+    gap: 40px;
+}
+
+.blog_list img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
